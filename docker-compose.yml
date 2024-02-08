@@ -9,7 +9,6 @@ services:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=polls
-    restart: always
     volumes:
       - polls_pg_data:/bitnami/postgresql
 
@@ -18,8 +17,7 @@ services:
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
-      - '6389:6389'
-    restart: always
+      - '6379:6379'
     volumes:
       - 'polls_redis_data:/bitnami/redis/data'
 
